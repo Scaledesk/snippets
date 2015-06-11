@@ -21,4 +21,9 @@ class Admin_Opr extends CI_Controller {
 		$this->Mo_Admin_Opr->del($value);
 		redirect("admin_manage/admin_dashboard","refresh");
 	}
+	//function to activate or deactivate user profile
+	public function ac_de_user($value=null)
+	{
+		# code to do
+	}
 }

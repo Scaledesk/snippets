@@ -14,4 +14,9 @@ class Mo_Admin_Opr extends CI_Model {
 	{
 		return $this->db->delete('user',array('id'=>$value));
 	}
+	// Model method to activate or deactivate user profile
+	public function ac_de_user($value=null)
+	{
+		# code to do
+	}
 }
