@@ -10,7 +10,7 @@ echo 'admin dashboard';
 echo '<html>';
 echo "<a href='".base_url()."/admin_manage/session_destroy'>Logout</a>";
 echo '<br/>';
-echo "<a href='".base_url()."index.php/admin_manage/admin_change_password'>Change Password</a>";
+echo "<a href='".base_url()."/admin_manage/admin_change_password'>Change Password</a>";
 //var_dump($users);
  ?>
 <table>
