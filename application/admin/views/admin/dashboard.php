@@ -18,12 +18,16 @@ echo "<a href='".base_url()."/admin_manage/admin_change_password'>Change Passwor
 <th>First Name</th>
 <th>Last Name</th>
 <th>Email</th>
+<th>Admin Operations</th>
 <?php foreach ($users as $user) {
 ?><tr>
 <td><?php echo $user->id;?></td>
 <td><?php echo $user->fname;?></td>
 <td><?php echo $user->lname;?></td>
 <td><?php echo $user->email;?></td>
+<td><a href="#">Active/Deactive User</a></td>
+<td><a href='<?php echo base_url();?>admin_opr/del/<?php echo $user->id;?>'>Delete User</a></td>
+<td><a href="#">Update User</a></td>
 </tr>
 <?php }?>
 </table>
