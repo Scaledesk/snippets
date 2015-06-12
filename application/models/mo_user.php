@@ -20,12 +20,14 @@ class Mo_User extends CI_Model
 	public function login()
 	{
 		$q=$this->db->get_where('user',array('email'=>$email=$this->input->post('email'),'pwd'=>do_hash($this->input->post('pwd'),'md5')));
-		if($q->num_rows()==1)
+		if($q->num_rows()==1 && $q->row()->status=='active')
 		{
 				$this->session->set_userdata('logged_user',$q->row()->id);
 				$this->session->set_userdata('fname',$q->row()->fname);
 			return true;
-		}return false;
+		}
+		$this->session->set_flashdata('f',array('msg'=>'Sorry, your account is inactive, Contact System Administrator!','class'=>'error'));
+		return false;
 	}
 	public function ch_pwd()
 	{if($this->db->get_where('user', array('id' => $this->session->userdata('logged_user'), 'pwd' => $cur_pwd =do_hash($this->input->post('cur_pwd'),'md5')))->num_rows()==1)
