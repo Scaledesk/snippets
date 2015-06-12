@@ -1,3 +1,13 @@
+<head>
+		<script type="text/javascript">
+    	function delete_id(id){
+        	if (confirm("Do you want to delete this User?"))
+          		window.location.href = '<?php echo base_url();?>admin_opr/del/'+id;
+        	else
+          		return false;
+        	} 
+	</script>
+</head>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
@@ -26,7 +36,7 @@ echo "<a href='".base_url()."/admin_manage/admin_change_password'>Change Passwor
 <td><?php echo $user->lname;?></td>
 <td><?php echo $user->email;?></td>
 <td><a href='<?php echo base_url();?>admin_opr/ac_de_user/<?php echo $user->id;?>/<?php echo $user->status;?>'><?php echo $user->status;?></a></td>
-<td><a href='<?php echo base_url();?>admin_opr/del/<?php echo $user->id;?>'>Delete User</a></td>
+<td><a href="javascript:delete_id(<?php echo $user->id; ?>,<?php echo $user->id; ?>)">Delete User</a></td>
 <td><a href="#">Update User</a></td>
 </tr>
 <?php }?>
