@@ -10,6 +10,7 @@ class Mo_User extends CI_Model
 	}
 	public function register()
 	{
+		$this->output->enable_profiler(TRUE);
 		#code to register
 		if($this->db->insert('user',array('fname'=>$this->input->post('fname'),'lname'=>$this->input->post('lname'),'email'=>$this->input->post('email'),'pwd'=>$this->input->post('pwd')))){
 			return true;
