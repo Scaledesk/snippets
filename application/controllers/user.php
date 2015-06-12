@@ -7,6 +7,7 @@ class User extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->output->enable_profiler(TRUE);
 	}
 	public function register()
 	{
@@ -16,6 +17,7 @@ class User extends CI_Controller
 	}
 	public function do_register()
 	{
+		$this->output->enable_profiler(TRUE);
 		$this->load->model('Mo_User');
 		$result=$this->Mo_User->register();
 		if($result==true){

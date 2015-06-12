@@ -7,6 +7,7 @@ $this->load->model(array('Menu'));
 }
 function index()
 {
+	$this->output->enable_profiler(TRUE);
 $data = array(
 'menu_top' => $this->Menu->menu_top()
 );
