@@ -41,6 +41,7 @@ echo "<a href='".base_url()."/admin_manage/admin_change_password'>Change Passwor
 </tr>
 <?php }?>
 </table>
+<?php echo "Total users: ".$loggedin_users;?>
 <?php $msg=$this->session->flashdata('f');
 	if (isset($msg)){?>
 	<div class="<?php echo $msg['class'];?>">

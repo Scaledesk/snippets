@@ -17,4 +17,9 @@ class Data extends CI_Model
 		}
 		return $this->db->where('id',$value)->get('user')->result();
 	}
+	public function get_no_users()
+	{	
+			  $this->db->like('data','logged_user');
+			 return $this->db->get('ci_sessions')->num_rows();
+	}
 }

@@ -35,6 +35,7 @@ class Admin_Manage extends CI_Controller {
 	{
 		$data['title']="Dashboard";
 		$data['users']=$this->get_users();
+		$data['loggedin_users']=$this->get_no_users();
 		$this->load->view('admin/dashboard',$data);
 	}	
 	
@@ -62,5 +63,10 @@ class Admin_Manage extends CI_Controller {
 	{
 		$this->load->Model('Data');
 		return $this->Data->get_user($value);
+	}
+	public function get_no_users()
+	{
+		$this->load->Model('Data');
+		return $this->Data->get_no_users();
 	}
 }
